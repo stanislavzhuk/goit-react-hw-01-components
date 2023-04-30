@@ -2,22 +2,20 @@
 import PropTypes from 'prop-types';
 
 export function Statistics({ title, stats }) {
+  function randomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }
   return (
     <section>
       {title && <h2>{title}</h2>}
       <ul>
-        <li>
-          <span></span>
-          <span></span>
+        {stats.map(({ id, label, percentage }) => (
+          <li key={id}
+          style={{ backgroundColor: randomHexColor() }}>
+            <span>{label}</span>
+            <span>{percentage}%</span>
         </li>
-        <li>
-          <span></span>
-          <span></span>
-        </li>
-        <li>
-          <span></span>
-          <span></span>
-        </li>
+        ))}
       </ul>
     </section>
   );
