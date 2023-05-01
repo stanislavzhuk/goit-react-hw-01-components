@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 
-export function Statistics({ title = 'Upload stats', stats }) {
+export function Statistics({ title, stats }) {
   function randomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   }
